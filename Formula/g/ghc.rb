@@ -35,11 +35,6 @@ class Ghc < Formula
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
 
-  # Build uses sed -r option, which is not available in Catalina shipped sed.
-  on_catalina :or_older do
-    depends_on "gnu-sed" => :build
-  end
-
   on_linux do
     on_arm do
       # Work around build failure with Ubuntu 22.04 toolchain (gcc/ld):
